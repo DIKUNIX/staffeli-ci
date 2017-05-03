@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+
+\usepackage{notes}
+
+\header{%
+  assignment={Towards a Continuous Integration of \\ Canvas LMS REST API Scripts},%
+  authors={DIKUNIX \texttt{<dikunix@dikumail.dk>}},%
+  shortAuthors={\ },%
+  date={May 3, 2017}
+}
+
+\begin{document}
+
+\maketitle
+
+\pagestyle{empty}
+
+\bigskip
+
+Canvas LMS has a REST
+API\footnote{\url{https://canvas.instructure.com/doc/api/index.html}}.
+
+\bigskip
+
+The REST API allows for reliable automation (scripting) of tasks that would
+otherwise be a laborious human chore when using the web-browser-based user
+interface.  For instance, sorting students into sections and groups based on
+some given criteria, batch download of student submissions, or batch upload of
+feedback and grades. In general, the REST API enables automated course
+management and grading.
+
+Using the REST API is not straight-forward for all teaching staff, so to
+leverage the benefits that it can provide across many courses, scripts written,
+battle-tested, and hot-fixed on one course can be shared with another. Although
+battle-testing and hot-fixing is great, it is far from a viable software
+development methodology. We would like to see these scripts become subject to
+continuous integration with automated testing.
+
+Testing such scripts is currently \emph{possible}: Manually create a hidden
+course. Add some willing \emph{real} system users as dummy students, teaching
+assistants, and teachers. Finally, in the interest of not overwhelming the
+current system setup, manually conduct small-scale tests while coordinating
+with said \emph{real} users. This is a laborious human chore, and it does not
+scale.
+
+Hence the following requests:
+
+\begin{enumerate}
+
+\item Would it be possible to set up a sandboxed environment, which is morally
+equivalent to the current, publicly facing Canvas LMS setup at the University
+of Copenhagen, where we can conduct such automated tests of our automation
+scripts?
+
+\item If not, the main shortcoming of the manually-created-course approach is
+the need to use real users. Would it be possible to get a dedicated pool of
+dummy users for such purposes?
+
+Also, to what extent can we abuse such manually created courses? Is there a
+limit on how many we can have, how many times we can create sections, groups,
+assignments, etc. within such courses?
+
+\end{enumerate}
+
+\end{document}
